@@ -1,0 +1,10 @@
+.SerieCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.SerieCard img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}

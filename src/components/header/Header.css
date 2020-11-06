@@ -1,0 +1,10 @@
+.nav {
+  background-color: #242d32;
+  display: flex;
+}
+
+.logo {
+  height: 40px;
+  padding: 20px;
+  margin: auto 0px 0px 50px;
+}
