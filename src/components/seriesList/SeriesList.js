@@ -8,8 +8,13 @@ function SeriesList() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
+      //I got blocked by CORS policy in Viaplay API.
+      //To bypass it, I'm using an external proxy to be able to fetch the data.
+      //In a production scenario, I would contact the API owner to allow
+      //my domain or, in case of third party APIs, I would fetch the data
+      //from a server and forward the data to my client.
       const result = await axios(
-        "http://content.viaplay.se/pc-se/serier/samtliga"
+        "https://cors-anywhere.herokuapp.com/http://content.viaplay.se/pc-se/serier/samtliga"
       );
 
       setData(result.data);
