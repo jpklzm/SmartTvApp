@@ -1,9 +1,16 @@
-.SerieCard {
+.focusable .SerieCard {
   display: flex;
   flex-direction: column;
 }
 
-.SerieCard img {
+.focusable:focus {
+  border: 1px solid red !important;
+  box-shadow: 0 0 10px red !important;
+  outline-offset: 0px !important;
+  outline: none !important;
+}
+
+.focusable .SerieCard img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
