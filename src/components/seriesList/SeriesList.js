@@ -31,8 +31,8 @@ function SeriesList() {
           ? null
           : data._embedded["viaplay:blocks"][0]._embedded[
               "viaplay:products"
-            ].map((item) => (
-              <Focusable>
+            ].map((item, index) => (
+              <Focusable key={index}>
                 <SerieCard serie={item.content} />
               </Focusable>
             ))}
