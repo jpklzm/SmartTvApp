@@ -24,6 +24,13 @@ function SeriesList() {
 
     fetchData();
   }, []);
+
+  const selectSerie = (serieName) => {
+    alert(
+      `This is the moment that you would watch ${serieName} in the real app :)`
+    );
+  };
+
   return (
     <SpatialNavigation>
       <div className="SeriesList">
@@ -32,7 +39,12 @@ function SeriesList() {
           : data._embedded["viaplay:blocks"][0]._embedded[
               "viaplay:products"
             ].map((item, index) => (
-              <Focusable key={index}>
+              <Focusable
+                key={index}
+                onClickEnter={() => {
+                  selectSerie(item.content.series.title);
+                }}
+              >
                 <SerieCard serie={item.content} />
               </Focusable>
             ))}

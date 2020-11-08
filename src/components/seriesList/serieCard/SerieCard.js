@@ -1,9 +1,9 @@
 import "./SerieCard.css";
 
-function SerieCard(serie) {
+function SerieCard({ serie }) {
   return (
     <div className="SerieCard">
-      <img src={serie.serie.images?.landscape?.url} alt={serie.serie.title} />
+      <img src={serie.images?.landscape?.url} alt={serie.title} />
     </div>
   );
 }
