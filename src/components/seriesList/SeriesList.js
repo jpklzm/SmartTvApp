@@ -2,6 +2,7 @@ import SerieCard from "./serieCard/SerieCard";
 import "./SeriesList.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import SpatialNavigation, { Focusable } from "react-js-spatial-navigation";
 
 function SeriesList() {
   const [data, setData] = useState({ series: [] });
@@ -24,13 +25,19 @@ function SeriesList() {
     fetchData();
   }, []);
   return (
-    <div className="SeriesList">
-      {loading
-        ? null
-        : data._embedded["viaplay:blocks"][0]._embedded[
-            "viaplay:products"
-          ].map((item) => <SerieCard serie={item.content} />)}
-    </div>
+    <SpatialNavigation>
+      <div className="SeriesList">
+        {loading
+          ? null
+          : data._embedded["viaplay:blocks"][0]._embedded[
+              "viaplay:products"
+            ].map((item) => (
+              <Focusable>
+                <SerieCard serie={item.content} />
+              </Focusable>
+            ))}
+      </div>
+    </SpatialNavigation>
   );
 }
 
