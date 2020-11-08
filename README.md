@@ -1,6 +1,6 @@
 # Smart TV App
 
-To run this project in localhost, install the dependencies with the following command:
+To run this project, first you have to install the dependencies with the following command:
 
 ### `yarn install`
 
@@ -8,7 +8,7 @@ And then you can run:
 
 ### `yarn start`
 
-It will the app in the development mode.
+It will run the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Other scripts
